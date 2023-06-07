@@ -9,7 +9,7 @@ const Navbar = () => {
                     <label tabIndex={0} className="btn btn-ghost btn-circle">
                         <img src="https://i.ibb.co/9sfSDND/logo.png" alt="Lingua Campha" />
                     </label>
-                    <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
+                    <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 p-2 shadow bg-base-200 rounded-box w-52">
                         <li><Link to="/">Homepage</Link></li>
                         <li><Link to="">Instructors</Link></li>
                         <li><Link to="">Classes</Link></li>
@@ -45,7 +45,7 @@ const Navbar = () => {
                             <img src="/images/stock/photo-1534528741775-53994a69daeb.jpg" />
                         </div>
                     </label>
-                    <ul tabIndex={0} className="mt-3 p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
+                    <ul tabIndex={0} className="mt-3 p-2 shadow menu menu-sm dropdown-content bg-base-200 rounded-box w-52">
                         <li><Link to="">Logout</Link></li>
                     </ul>
                 </div>
