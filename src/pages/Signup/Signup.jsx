@@ -1,16 +1,28 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
+import { Link, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../Provider/AuthProvider';
 
 const Signup = () => {
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     const [passwordVisible, setPasswordVisible] = useState(false);
-
+    const { createUser } = useContext(AuthContext)
+    const navigate=useNavigate()
+    // const [error, setError] = useState('')
     const togglePassword = () => {
         setPasswordVisible(!passwordVisible);
     };
 
     const onSubmit = (data) => {
         console.log(data.name, data.email, data.password, data.photo)
+        createUser(data.email, data.password)
+            .then(result => {
+                console.log(result.user)
+                navigate('/')
+            })
+            .catch(error =>
+                console.log(error.message))
     };
 
     return (
@@ -26,7 +38,7 @@ const Signup = () => {
                     name="name"
                     placeholder="name"
                     className="input input-bordered bg-slate-200"
-                    {...register("name", {  maxLength: 20 })}
+                    {...register("name", { maxLength: 20 })}
                 />
             </div>
 
@@ -72,24 +84,21 @@ const Signup = () => {
                         pattern: /^(?=.*[A-Z])(?=.*[!@#$%^&*])/,
                     })}
                 />
-                {errors.password?.type === 'required' && <span>This field is required</span>}
+                {errors.password?.type === 'required' && <span className='text-red-700'>This field is required</span>}
                 {errors.password?.type === 'minLength' && (
-                    <span>Password must be at least 6 characters long</span>
+                    <span className='text-red-700'>Password must be at least 6 characters long</span>
                 )}
                 {errors.password?.type === 'pattern' && (
-                    <span>Password must contain a capital letter and a special character</span>
+                    <span className='text-red-700'>Password must contain a capital letter and a special character</span>
                 )}
-
-                <button type="button" className='btn btn-primary mt-5 w-2/3' onClick={togglePassword}>
-                    {passwordVisible ? 'Hide' : 'Show'}
-                </button>
+                <div className='btn mt-5 w-1/3' onClick={togglePassword}>{passwordVisible ? <FaEyeSlash className='w-10' /> : <FaEye className='w-10' />}</div>
             </div>
 
 
 
             <div className="form-control">
                 <label className="label">
-                    <span className="label-text">Password</span>
+                    <span className="label-text">Confirm Password</span>
                 </label>
                 <input placeholder='Confirm your Password' className="input input-bordered bg-slate-200"
                     type={passwordVisible ? 'text' : 'password'}
@@ -99,12 +108,11 @@ const Signup = () => {
                     })}
                 />
                 {errors.confirmPassword && (
-                    <span>Passwords do not match</span>
+                    <span className='text-red-700'>Passwords do not match</span>
                 )}
             </div>
-
-
             <input type="submit" className='btn btn-primary mt-5 w-2/3' value="Submit" />
+            <p className='mt-3'>Already Have An Account?Please <Link to='/login' className='font-bold'>Login</Link></p>
         </form>
     );
 

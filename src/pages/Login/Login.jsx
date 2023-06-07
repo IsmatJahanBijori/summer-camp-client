@@ -1,9 +1,13 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { FaEyeSlash, FaEye } from "react-icons/fa";
+import { Link, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../Provider/AuthProvider';
 const Login = () => {
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     const [passwordVisible, setPasswordVisible] = useState(false);
+    const { loginUser } = useContext(AuthContext)
+    const navigate=useNavigate()
 
     const togglePassword = () => {
         setPasswordVisible(!passwordVisible);
@@ -11,6 +15,13 @@ const Login = () => {
 
     const onSubmit = (data) => {
         console.log(data.email, data.password)
+        loginUser(data.email, data.password)
+        .then(result => {
+            console.log(result.user)
+            navigate('/')
+        })
+        .catch(error =>
+            console.log(error.message))
     };
 
     return (
@@ -42,6 +53,7 @@ const Login = () => {
                 <div className='btn mt-5 w-1/3' onClick={togglePassword}>{passwordVisible?<FaEyeSlash className='w-10'/>:<FaEye className='w-10'/>}</div>
             </div>
             <input type="submit" className='btn btn-primary mt-5 w-2/3' value="Submit" />
+            <p className='mt-3'>New To This Site?Please <Link to='/signup' className='font-bold'>Signup</Link></p>
         </form>
     );
 
