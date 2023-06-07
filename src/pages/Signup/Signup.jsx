@@ -14,7 +14,7 @@ const Signup = () => {
     };
 
     return (
-        <form onSubmit={handleSubmit(onSubmit)} className='w-full ml-5 mr-5 md:w-1/4 md:mx-auto mb-20'>
+        <form onSubmit={handleSubmit(onSubmit)} className='w-full ml-5 mr-5 md:w-1/4 md:mx-auto mt-20 mb-10'>
 
             {/*Name */}
             <div className="form-control">
@@ -25,10 +25,9 @@ const Signup = () => {
                     type="text"
                     name="name"
                     placeholder="name"
-                    className="input input-bordered"
-                    {...register("name", { required: true, maxLength: 20 })}
+                    className="input input-bordered bg-slate-200"
+                    {...register("name", {  maxLength: 20 })}
                 />
-                {errors.name && <span>This field is required</span>}
             </div>
 
             {/*Email */}
@@ -40,7 +39,7 @@ const Signup = () => {
                     type="email"
                     name="email"
                     placeholder="email"
-                    className="input input-bordered"
+                    className="input input-bordered bg-slate-200"
                     {...register("email")}
                 />
             </div>
@@ -55,7 +54,7 @@ const Signup = () => {
                     type="url"
                     name="photo"
                     placeholder="photo"
-                    className="input input-bordered"
+                    className="input input-bordered bg-slate-200"
                     {...register("photo")}
                 />
             </div>
@@ -65,7 +64,7 @@ const Signup = () => {
                 <label className="label">
                     <span className="label-text">Password</span>
                 </label>
-                <input placeholder='Give your Password' className="input input-bordered"
+                <input placeholder='Give your Password' className="input input-bordered bg-slate-200"
                     type={passwordVisible ? 'text' : 'password'}
                     {...register("password", {
                         required: true,
@@ -92,7 +91,7 @@ const Signup = () => {
                 <label className="label">
                     <span className="label-text">Password</span>
                 </label>
-                <input placeholder='Confirm your Password' className="input input-bordered"
+                <input placeholder='Confirm your Password' className="input input-bordered bg-slate-200"
                     type={passwordVisible ? 'text' : 'password'}
                     {...register("confirmPassword", {
                         required: true,
