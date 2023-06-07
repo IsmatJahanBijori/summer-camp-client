@@ -1,14 +1,17 @@
 import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Provider/AuthProvider';
+import SocialLogin from '../../Shared/SocialLogin/SocialLogin';
 
 const Signup = () => {
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     const [passwordVisible, setPasswordVisible] = useState(false);
     const { createUser } = useContext(AuthContext)
     const navigate=useNavigate()
+    const location = useLocation();
+    const from = location.state?.from?.pathname || "/";
     // const [error, setError] = useState('')
     const togglePassword = () => {
         setPasswordVisible(!passwordVisible);
@@ -19,7 +22,7 @@ const Signup = () => {
         createUser(data.email, data.password)
             .then(result => {
                 console.log(result.user)
-                navigate('/')
+                navigate(from, { replace: true });
             })
             .catch(error =>
                 console.log(error.message))
@@ -113,6 +116,7 @@ const Signup = () => {
             </div>
             <input type="submit" className='btn btn-primary mt-5 w-2/3' value="Submit" />
             <p className='mt-3'>Already Have An Account?Please <Link to='/login' className='font-bold'>Login</Link></p>
+            <SocialLogin/>
         </form>
     );
 
