@@ -1,14 +1,16 @@
-import React from 'react';
-import Navbar from '../../../Shared/Navbar/Navbar';
-import Footer from '../../../Shared/Footer/Footer';
-import { Outlet } from 'react-router-dom';
+import React, { useState } from 'react';
 import Slider from '../Slider/Slider';
 import PopularClasses from '../PopularClasses/PopularClasses';
 import PopularInstructors from '../PopularInstructors/PopularInstructors';
 import ExtraSection from '../ExtraSection/ExtraSection';
 
 const Home = () => {
+    const [isDark, setDark] = useState(false)
+    const handleDark = () => {
+        setDark(true)
+    }
     return (
+
         <div>
             <Slider />
             <PopularClasses />

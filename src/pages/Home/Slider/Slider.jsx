@@ -12,7 +12,7 @@ import { EffectCube, Pagination } from "swiper";
 //<a href="https://imgbb.com/"><img src="https://i.ibb.co/DGRYS95/img6.jpg" alt="img6" border="0"></a>
 const Slider = () => {
     return (
-        <div>
+        <div className='my-44 md:my-0'>
             <Swiper
                 effect={"cube"}
                 grabCursor={true}
@@ -28,37 +28,37 @@ const Slider = () => {
             >
                 <SwiperSlide>
                     <img src="https://i.ibb.co/tcYbh4D/img5.jpg" className='w-[900px] mx-auto my-20' />
-                    <div className='absolute -mt-64 ml-[600px]'>
-                        <div className="w-[760px] h-[140px]">
-                            <h2 className='text-5xl'>Welcome to our Language Camp!</h2>
-                            <p className='text-xl'>Immerse yourself in a multicultural learning experience.</p>
+                    <div className='absolute -mt-96 ml-[20px] mr-3 md:-mt-64 md:ml-[600px]'>
+                        <div className="bg-black bg-opacity-30 w-full p-5 md:w-[760px] md:h-[140px]">
+                            <h2 className='text-5xl text-white'>Welcome to our Language Camp!</h2>
+                            <p className='text-xl text-white'>Immerse yourself in a multicultural learning experience.</p>
                         </div>
                     </div>
                 </SwiperSlide>
                 <SwiperSlide>
                     <img src="https://i.ibb.co/BrYqkCy/img3.jpg" className='w-[900px] mx-auto my-20' />
-                    <div className='absolute -mt-64 ml-[600px]'>
-                        <div className="w-[760px] h-[140px]">
-                            <h2 className='text-5xl'>Exciting Cultural Activities</h2>
-                            <p className='text-xl'>Experience the rich traditions and customs of different cultures.</p>
+                    <div className='absolute -mt-96 ml-[20px] mr-3 md:-mt-64 md:ml-[600px]'>
+                        <div className="bg-black bg-opacity-30 w-full p-5 md:w-[760px] md:h-[140px]">
+                            <h2 className='text-5xl text-white'>Exciting Cultural Activities</h2>
+                            <p className='text-xl text-white'>Experience the rich traditions and customs of different cultures.</p>
                         </div>
                     </div>
                 </SwiperSlide>
                 <SwiperSlide>
                     <img src="https://i.ibb.co/tcYbh4D/img5.jpg" className='w-[900px] mx-auto my-20' />
-                    <div className='absolute -mt-64 ml-[600px]'>
-                        <div className="w-[760px] h-[140px]">
-                            <h2 className='text-5xl'>Learn from Native Speakers</h2>
-                            <p className='text-xl'>Our qualified instructors provide authentic language instruction.</p>
+                    <div className='absolute -mt-96 ml-[20px] mr-3 md:-mt-64 md:ml-[600px]'>
+                        <div className="bg-black bg-opacity-30 w-full p-5 md:w-[760px] md:h-[140px]">
+                            <h2 className='text-5xl text-white'>Learn from Native Speakers</h2>
+                            <p className='text-xl text-white'>Our qualified instructors provide authentic language instruction.</p>
                         </div>
                     </div>
                 </SwiperSlide>
                 <SwiperSlide>
                     <img src="https://i.ibb.co/BrYqkCy/img3.jpg" className='w-[900px] mx-auto my-20' />
-                    <div className='absolute -mt-64 ml-[600px]'>
-                        <div className="w-[760px] h-[140px]">
-                            <h2 className='text-5xl'>Exciting Cultural Activities</h2>
-                            <p className='text-xl'>Experience the rich traditions and customs of different cultures.</p>
+                    <div className='absolute -mt-96 ml-[20px] mr-3 md:-mt-64 md:ml-[600px]'>
+                        <div className="bg-black bg-opacity-30 w-full p-5 md:w-[760px] md:h-[140px]">
+                            <h2 className='text-5xl text-white'>Exciting Cultural Activities</h2>
+                            <p className='text-xl text-white'>Experience the rich traditions and customs of different cultures.</p>
                         </div>
                     </div>
                 </SwiperSlide>

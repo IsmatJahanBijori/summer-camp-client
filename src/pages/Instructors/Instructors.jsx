@@ -1,5 +1,6 @@
 import React from 'react';
 import useInstructors from '../../hooks/useInstructors';
+import { Link } from 'react-router-dom';
 
 const Instructors = () => {
     const [instructors] = useInstructors()
@@ -15,6 +16,7 @@ const Instructors = () => {
                         <th>Email</th>
                         <th>Number Of Classes Taken</th>
                         <th>Name Of Classes Taken</th>
+                        <th>Classes</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -27,6 +29,7 @@ const Instructors = () => {
                                 <td>{instructor.email}</td>
                                 <td>{instructor.classesTaken}</td>
                                 <td>{instructor.classesNames}</td>
+                                <Link to='/classes'><button className='btn btn-active btn-ghost my-3'>See Classes</button></Link>
                              </tr>)
                     }
                 </tbody>
