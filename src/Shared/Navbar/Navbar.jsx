@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { AuthContext } from '../../Provider/AuthProvider';
 
 const Navbar = () => {
@@ -11,11 +11,11 @@ const Navbar = () => {
     }
     const navLists = (
         <React.Fragment>
-        <li><Link to="/" className='hover:text-blue-500'>Homepage</Link></li>
-        <li><Link to="/instructors" className='hover:text-blue-500'>Instructors</Link></li>
-        <li><Link to="/classes" className='hover:text-blue-500'>Classes</Link></li>
+        <li><NavLink to="/" className='hover:text-blue-500'>Homepage</NavLink></li>
+        <li><NavLink to="/instructors" className='hover:text-blue-500'>Instructors</NavLink></li>
+        <li><NavLink to="/classes" className='hover:text-blue-500'>Classes</NavLink></li>
         {
-            user ? <li><Link to="/dashboard">Dashboard</Link></li> : <li><Link to="/login">Login</Link></li>
+            user ? <li><NavLink to="/dashboard">Dashboard</NavLink></li> : <li><NavLink to="/login">Login</NavLink></li>
         }
             {user ? (
                 <React.Fragment>
@@ -32,12 +32,12 @@ const Navbar = () => {
                 </React.Fragment>
             ) : (
                 <React.Fragment>
-                    <Link to="/login" className="mr-3 hover:text-blue-500">
+                    <NavLink to="/login" className="mr-3 hover:text-blue-500">
                         Login
-                    </Link>
-                    <Link to="/registration" className="mr-3 hover:text-blue-500">
+                    </NavLink>
+                    <NavLink to="/registration" className="mr-3 hover:text-blue-500">
                         Register
-                    </Link>
+                    </NavLink>
                 </React.Fragment>
             )}
         </React.Fragment>

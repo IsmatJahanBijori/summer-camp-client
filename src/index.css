@@ -3,6 +3,8 @@
 @tailwind components;
 @tailwind utilities;
 
-.container{
-padding: 10px 80px;
-}
+.sidebar a.active {
+    color: white;
+    background-color: purple;
+   
+  }
