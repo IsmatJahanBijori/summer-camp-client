@@ -9,48 +9,64 @@ const Navbar = () => {
             .then(() => { })
             .catch(error => { console.log(error.message) })
     }
-    return (
-        <div className="navbar bg-[#ebf1ec]">
-            <div className="navbar-start">
-                <div className="dropdown">
-                    <label tabIndex={0} className="btn btn-ghost btn-circle">
-                        <img src="https://i.ibb.co/9sfSDND/logo.png" alt="Lingua Campha" />
-                    </label>
-                    <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 p-2 shadow bg-base-200 rounded-box w-52">
-                        <li><Link to="/">Homepage</Link></li>
-                        <li><Link to="">Instructors</Link></li>
-                        <li><Link to="">Classes</Link></li>
-                        {
-                            user ? <li><Link to="">Dashboard</Link></li> : <li><Link to="/login">Login</Link></li>
-                        }
-                    </ul>
-                </div>
-            </div>
-            <div className="navbar-center">
-                <Link to='/' className="btn btn-ghost normal-case text-xl">Lingua Campha</Link>
-            </div>
-            <div className="navbar-end">
-                {
-                    user ?
-                        <div className="dropdown dropdown-end">
-                            <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-                                <div className="w-10 rounded-full">
-                                    <img src={user?.photoURL} />
-                                </div>
-                            </label>
-                            <ul tabIndex={0} className="mt-3 p-2 shadow menu menu-sm dropdown-content bg-base-200 rounded-box w-52">
-                                <button onClick={handleLogout}><Link to="/">Logout</Link></button>
-                            </ul>
-                        </div> :
+    const navLists = (
+        <React.Fragment>
+        <li><Link to="/" className='hover:text-blue-500'>Homepage</Link></li>
+        <li><Link to="/instructors" className='hover:text-blue-500'>Instructors</Link></li>
+        <li><Link to="/classes" className='hover:text-blue-500'>Classes</Link></li>
+        {
+            user ? <li><Link to="/dashboard">Dashboard</Link></li> : <li><Link to="/login">Login</Link></li>
+        }
+            {user ? (
+                <React.Fragment>
+                    <button onClick={handleLogout} className="btn">
+                        Logout
+                    </button>
+                    <div className="dropdown dropdown-end">
                         <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                             <div className="w-10 rounded-full">
-                                <img src="/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                                <img src={user?.photoURL} />
                             </div>
                         </label>
-                }
+                    </div>
+                </React.Fragment>
+            ) : (
+                <React.Fragment>
+                    <Link to="/login" className="mr-3 hover:text-blue-500">
+                        Login
+                    </Link>
+                    <Link to="/registration" className="mr-3 hover:text-blue-500">
+                        Register
+                    </Link>
+                </React.Fragment>
+            )}
+        </React.Fragment>
+    );
+
+    return (
+        <div className="navbar bg-base-200">
+            <div className="navbar-start">
+                <div className="dropdown">
+                    <label tabIndex={0} className="btn btn-ghost">
+                        <img src="https://i.ibb.co/9sfSDND/logo.png" className="w-8 h-8" alt="" />
+                    </label>
+                    <ul
+                        tabIndex={0}
+                        className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52 text-black  font-semibold lg:hidden"
+                    >
+                        {navLists}
+                    </ul>
+                </div>
+                <a className="btn btn-ghost normal-case text-xl">Lingua Campha</a>
+            </div>
+            <div className="navbar-center hidden lg:flex">
+                <ul className="menu font-semibold menu-horizontal px-1">
+                    {navLists}
+                </ul>
             </div>
         </div>
     );
 };
 
 export default Navbar;
+

@@ -4,41 +4,41 @@
       "name": "John Doe",
       "email": "john.doe@example.com",
       "classesTaken": 10,
-      "classesNames": ["English Conversation", "Business English"]
+      "classesNames": "English & Business Conversation"
     },
     {
       "image": "https://i.ibb.co/8mjtQfW/ins2.jpg",
       "name": "Jane Smith",
       "email": "jane.smith@example.com",
       "classesTaken": 5,
-      "classesNames": ["French for Beginners"]
+      "classesNames": "French for Beginners"
     },
     {
       "image": "https://i.ibb.co/2h1mG1m/ins3.jpg",
       "name": "Alex Johnson",
       "email": "alex.johnson@example.com",
       "classesTaken": 8,
-      "classesNames": ["German Language and Culture"]
+      "classesNames": "German Language and Culture"
     },
     {
       "image": "https://i.ibb.co/n8B9CTn/ins4.jpg",
       "name": "Sarah Wilson",
       "email": "sarah.wilson@example.com",
       "classesTaken": 12,
-      "classesNames": ["Spanish Immersion", "Advanced Spanish Grammar"]
+      "classesNames": "Spanish Immersion & Advanced Spanish Grammar"
     },
     {
       "image": "https://i.ibb.co/BcN2vSY/ins1.jpg",
       "name": "Michael Brown",
       "email": "michael.brown@example.com",
       "classesTaken": 3,
-      "classesNames": ["Italian for Travelers"]
+      "classesNames": "Italian for Travelers"
     },
     {
       "image": "https://i.ibb.co/2h1mG1m/ins3.jpg",
       "name": "Emily Davis",
       "email": "emily.davis@example.com",
       "classesTaken": 7,
-      "classesNames": ["Japanese Language and Culture"]
+      "classesNames": "Japanese Language and Culture"
     }
-  ]
+]

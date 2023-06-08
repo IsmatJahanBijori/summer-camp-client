@@ -13,7 +13,7 @@ const PopularInstructors = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data.name)
+                // console.log(data.name)
                 setInstructors(data)
             })
     }, [])
@@ -34,13 +34,13 @@ const PopularInstructors = () => {
                 modules={[EffectCreative]}
                 className="mySwiper"
             >
-            <p className='text-2xl'>Swipe to the left</p>
+            <p className='text-2xl text-center'>Swipe to the left</p>
                 {
                     instructors.map(instructor =>
                         <SwiperSlide key={instructor._id}>
                             <div className="card w-96 bg-base-100 shadow-xl mx-auto text-center">
-                                <div className="w-24 rounded-full">
-                                    <img src={instructor.image} />
+                                <div className="w-32 rounded-full">
+                                    <img src={instructor.image} className='p-3' />
                                 </div>
                                 <div className="card-body">
                                     <h2 className="card-title">{instructor.name}</h2>

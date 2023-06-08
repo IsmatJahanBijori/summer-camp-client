@@ -2,8 +2,8 @@ import React from 'react';
 // <a href="https://imgbb.com/"><img src="https://i.ibb.co/h9n9Qmx/extra1.jpg" alt="extra1" border="0"></a><br /><a target='_blank' href='https://imgbb.com/'>free image hosting</a><br />
 const ExtraSection = () => {
     return (
-        <div className="hero  bg-slate-200 my-20 px-auto">
-            <div className="hero-content flex-col lg:flex-row-reverse">
+        <div className="hero border border-blue-300 bg-slate-200 my-20 px-auto">
+            <div className="hero-content animate-pulse flex-col lg:flex-row-reverse">
                 <img src="https://i.ibb.co/dPk8q0W/extra.jpg" className="max-w-sm rounded-lg shadow-2xl" />
                 <div className='bg-black bg-opacity-20 rounded-lg p-10'>
                     <h1 className="text-5xl font-bold">Why Choose Us!</h1>
