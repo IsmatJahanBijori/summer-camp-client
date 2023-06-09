@@ -10,38 +10,37 @@ const Navbar = () => {
             .catch(error => { console.log(error.message) })
     }
 
-    
+
     const navLists = (
         <React.Fragment>
-        <li><NavLink to="/" className='hover:text-blue-500'>Homepage</NavLink></li>
-        <li><NavLink to="/instructors" className='hover:text-blue-500'>Instructors</NavLink></li>
-        <li><NavLink to="/classes" className='hover:text-blue-500'>Classes</NavLink></li>
-        {
-            user ? <li><NavLink to="/dashboard">Dashboard</NavLink></li> : <li><NavLink to="/login">Login</NavLink></li>
-        }
+            <li><NavLink to="/" className='text-white bg-black'>Homepage</NavLink></li>
+            <li><NavLink to="/instructors" className='text-black'>Instructors</NavLink></li>
+            <li><NavLink to="/classes" className='text-black'>Classes</NavLink></li>
+            {
+                user ? <li><NavLink to="/dashboard" className='text-black'>Dashboard</NavLink></li> : <li><NavLink to="/login" className='text-black'>Login</NavLink></li>
+            }
             {user ? (
                 <React.Fragment>
-                    <button onClick={handleLogout} className="btn">
-                        Logout
-                    </button>
-                    <div className="dropdown dropdown-end">
+                    <li>
+                        <NavLink onClick={handleLogout} className=" text-white bg-black">
+                            Logout
+                        </NavLink>
+                    </li>
+                    <li className="dropdown dropdown-end">
                         <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                             <div className="w-10 rounded-full">
                                 <img src={user?.photoURL} />
                             </div>
                         </label>
-                    </div>
+                    </li>
                 </React.Fragment>
-            ) : (
-                <React.Fragment>
-                    <NavLink to="/login" className="mr-3 hover:text-blue-500">
-                        Login
-                    </NavLink>
-                    <NavLink to="/signup" className="mr-3 hover:text-blue-500">
+            ) :
+                <li>
+                    <NavLink to="/signup" className=" text-black">
                         Register
                     </NavLink>
-                </React.Fragment>
-            )}
+                </li>
+            }
         </React.Fragment>
     );
 

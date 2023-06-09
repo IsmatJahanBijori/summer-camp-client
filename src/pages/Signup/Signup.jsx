@@ -19,13 +19,22 @@ const Signup = () => {
         console.log(data.name, data.email, data.password, data.photo)
         createUser(data.email, data.password)
             .then(result => {
+                const savedUser={name: data.name, email: data.email}
                 console.log(result.user)
                 updateUserProfile(data.name, data.photo)
                     .then(() => {
                         console.log("user profile updated")
-                        // toast.success('Successfully user profile updated!')
+                        
+                        fetch('http://localhost:5000/users',{
+                            method:'POST',
+                            headers:{
+                                'content-type':'application/json'
+                            },
+                            body: JSON.stringify(savedUser)
+                        })
+                        navigate("/");
                     })
-                navigate("/");
+                // navigate("/");
             })
             .catch(error =>
                 console.log(error.message))
