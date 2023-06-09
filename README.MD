@@ -6,3 +6,5 @@
 ### 4. npm uninstall slick-carousel
 ### 5. npm i swiper (cube, effective card)
 ### 6. npm i react-hot-toast
+### 7. npm install sweetalert2
+### 8. npm i @tanstack/react-query

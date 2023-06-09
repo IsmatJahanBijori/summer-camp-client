@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
-
+import { FaUsers } from "react-icons/fa";
+import { BsFillEmojiSmileFill } from "react-icons/bs";
 const Dashboard = () => {
     const isAdmin = true
     const isInstructor = true
@@ -19,24 +20,11 @@ const Dashboard = () => {
                     {
                         isAdmin &&
                         <React.Fragment>
-                            <li><NavLink to='manageClasses' className='hover:text-blue-500'>Manage Classes</NavLink></li>
-                            <li><NavLink to='manageUsers' className='hover:text-blue-500'>Manage Users</NavLink></li>
+                            <li><NavLink to='manageClasses' className='hover:text-blue-500'><BsFillEmojiSmileFill/>Manage Classes</NavLink></li>
+                            <li><NavLink to='manageUsers' className='hover:text-blue-500'><FaUsers/>Manage Users</NavLink></li>
                         </React.Fragment>
                     }
-                    {
-                        isInstructor &&
-                        <React.Fragment>
-                            <li><NavLink to='addClass' className='hover:text-blue-500'>Add A Class</NavLink></li>
-                            <li><NavLink to='myClasses' className='hover:text-blue-500'>My Classes</NavLink></li>
-                        </React.Fragment>
-                    }
-                    {
-                        isStudent &&
-                        <React.Fragment>
-                            <li><NavLink to='mySelectedClasses' className='hover:text-blue-500'>My Selected Classes</NavLink></li>
-                            <li><NavLink to='myEnrolledClasses' className='hover:text-blue-500'>My Enrolled Classes</NavLink></li>
-                        </React.Fragment>
-                    }
+                    
                     <hr className='border-black my-5' />
                     <li><NavLink to="/" className='hover:text-blue-500'>Homepage</NavLink></li>
                     <li><NavLink to="/instructors" className='hover:text-blue-500'>Instructors</NavLink></li>
@@ -49,3 +37,21 @@ const Dashboard = () => {
 };
 
 export default Dashboard;
+
+{/**
+{
+                        isInstructor &&
+                        <React.Fragment>
+                            <li><NavLink to='addClass' className='hover:text-blue-500'>Add A Class</NavLink></li>
+                            <li><NavLink to='myClasses' className='hover:text-blue-500'>My Classes</NavLink></li>
+                        </React.Fragment>
+                    }
+                    {
+                        isStudent &&
+                        <React.Fragment>
+                            <li><NavLink to='mySelectedClasses' className='hover:text-blue-500'>My Selected Classes</NavLink></li>
+                            <li><NavLink to='myEnrolledClasses' className='hover:text-blue-500'>My Enrolled Classes</NavLink></li>
+                        </React.Fragment>
+                    }                
+                
+*/}
