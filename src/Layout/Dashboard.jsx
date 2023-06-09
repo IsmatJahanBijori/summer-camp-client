@@ -1,11 +1,14 @@
 import React from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
 import { FaHome, FaUserGraduate, FaUserTie, FaUsers } from "react-icons/fa";
+import { useAdmin } from '../hooks/useAdmin';
 // import { BsFillEmojiSmileFill } from "react-icons/bs";
 const Dashboard = () => {
-    const isAdmin = true
-    const isInstructor = true
-    const isStudent = true
+    // const isAdmin = true
+    // const isInstructor = true
+    // const isStudent = true
+
+    const [isAdmin]=useAdmin()
     return (
         <div className="drawer lg:drawer-open">
             <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
@@ -20,7 +23,7 @@ const Dashboard = () => {
                     {
                         isAdmin &&
                         <React.Fragment>
-                            <li><NavLink to='manageClasses' className='hover:text-blue-500'>Manage Classes</NavLink></li>
+                            <li><NavLink to='manageClasses' className='hover:text-blue-500'><FaUserGraduate/>Manage Classes</NavLink></li>
                             <li><NavLink to='manageUsers' className='hover:text-blue-500'><FaUsers />Manage Users</NavLink></li>
                         </React.Fragment>
                     }
