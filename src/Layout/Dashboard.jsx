@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
-import { FaUsers } from "react-icons/fa";
-import { BsFillEmojiSmileFill } from "react-icons/bs";
+import { FaHome, FaUserGraduate, FaUserTie, FaUsers, FaUsersBetweenLines } from "react-icons/fa";
+// import { BsFillEmojiSmileFill } from "react-icons/bs";
 const Dashboard = () => {
     const isAdmin = true
     const isInstructor = true
@@ -20,15 +20,15 @@ const Dashboard = () => {
                     {
                         isAdmin &&
                         <React.Fragment>
-                            <li><NavLink to='manageClasses' className='hover:text-blue-500'><BsFillEmojiSmileFill/>Manage Classes</NavLink></li>
-                            <li><NavLink to='manageUsers' className='hover:text-blue-500'><FaUsers/>Manage Users</NavLink></li>
+                            <li><NavLink to='manageClasses' className='hover:text-blue-500'><FaUsersBetweenLines />Manage Classes</NavLink></li>
+                            <li><NavLink to='manageUsers' className='hover:text-blue-500'><FaUsers />Manage Users</NavLink></li>
                         </React.Fragment>
                     }
-                    
+
                     <hr className='border-black my-5' />
-                    <li><NavLink to="/" className='hover:text-blue-500'>Homepage</NavLink></li>
-                    <li><NavLink to="/instructors" className='hover:text-blue-500'>Instructors</NavLink></li>
-                    <li><NavLink to="/classes" className='hover:text-blue-500'>Classes</NavLink></li>
+                    <li><NavLink to="/" className='hover:text-blue-500'><FaHome/>Homepage</NavLink></li>
+                    <li><NavLink to="/instructors" className='hover:text-blue-500'><FaUserTie/>Instructors</NavLink></li>
+                    <li><NavLink to="/classes" className='hover:text-blue-500'><FaUserGraduate/>Classes</NavLink></li>
                 </ul>
 
             </div>
