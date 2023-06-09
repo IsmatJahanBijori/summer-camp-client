@@ -68,7 +68,7 @@ const ManageUsers = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        {/* row 1 */}
+                        
                         {
                             users.map((user, index) =>
                                 <tr key={user._id}>
@@ -76,9 +76,9 @@ const ManageUsers = () => {
                                     <td>{user.name}</td>
                                     <td>{user.email}</td>
 
-                                    <td>{user.role1 === 'admin' ? 'admin' : <button onClick={() => handleAdmin(user)} className='button1 btn btn-active btn-ghost my-1'><FaUserTag />Make Admin</button>}</td>
+                                    <td>{user.role === 'admin' ? 'admin' : <button onClick={() => handleAdmin(user)} className='button1 btn btn-active btn-ghost my-1'><FaUserTag />Make Admin</button>}</td>
 
-                                    <td>{user.role2 === 'instructor' ? 'instructor' : <button onClick={() => handleInstructor(user)} className='button2 btn btn-active btn-ghost my-1'><FaUserCheck />Make Instructor</button>}</td>
+                                    <td>{user.role === 'instructor' ? 'instructor' : <button onClick={() => handleInstructor(user)} className='button2 btn btn-active btn-ghost my-1'><FaUserCheck />Make Instructor</button>}</td>
                                 </tr>
                             )
                         }

@@ -8,3 +8,4 @@
 ### 6. npm i react-hot-toast
 ### 7. npm install sweetalert2
 ### 8. npm i @tanstack/react-query
+### 9. npm install axios

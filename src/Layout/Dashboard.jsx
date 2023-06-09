@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
-import { FaHome, FaUserGraduate, FaUserTie, FaUsers, FaUsersBetweenLines } from "react-icons/fa";
+import { FaHome, FaUserGraduate, FaUserTie, FaUsers } from "react-icons/fa";
 // import { BsFillEmojiSmileFill } from "react-icons/bs";
 const Dashboard = () => {
     const isAdmin = true
@@ -20,7 +20,7 @@ const Dashboard = () => {
                     {
                         isAdmin &&
                         <React.Fragment>
-                            <li><NavLink to='manageClasses' className='hover:text-blue-500'><FaUsersBetweenLines />Manage Classes</NavLink></li>
+                            <li><NavLink to='manageClasses' className='hover:text-blue-500'>Manage Classes</NavLink></li>
                             <li><NavLink to='manageUsers' className='hover:text-blue-500'><FaUsers />Manage Users</NavLink></li>
                         </React.Fragment>
                     }
