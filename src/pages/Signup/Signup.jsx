@@ -4,15 +4,13 @@ import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Provider/AuthProvider';
 import SocialLogin from '../../Shared/SocialLogin/SocialLogin';
+import { Toaster, toast } from 'react-hot-toast';
 
 const Signup = () => {
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     const [passwordVisible, setPasswordVisible] = useState(false);
-    const { createUser } = useContext(AuthContext)
-    const navigate=useNavigate()
-    // const location = useLocation();
-    // const from = location.state?.from?.pathname || "/";
-    // const [error, setError] = useState('')
+    const { createUser, updateUserProfile } = useContext(AuthContext)
+    const navigate = useNavigate()
     const togglePassword = () => {
         setPasswordVisible(!passwordVisible);
     };
@@ -22,12 +20,19 @@ const Signup = () => {
         createUser(data.email, data.password)
             .then(result => {
                 console.log(result.user)
+                updateUserProfile(data.name, data.photo)
+                    .then(() => {
+                        console.log("user profile updated")
+                        // toast.success('Successfully user profile updated!')
+                    })
                 navigate("/");
             })
             .catch(error =>
                 console.log(error.message))
     };
-
+    const notify=()=>{
+        toast.success('Successfully user profile updated!')
+    }
     return (
         <form onSubmit={handleSubmit(onSubmit)} className='w-full ml-5 mr-5 md:w-1/4 md:mx-auto mt-20 mb-10'>
 
@@ -114,9 +119,11 @@ const Signup = () => {
                     <span className='text-red-700'>Passwords do not match</span>
                 )}
             </div>
-            <input type="submit" className='btn btn-primary mt-5 w-2/3' value="Submit" />
+            <input type="submit" onClick={notify} className='btn btn-primary mt-5 w-2/3' value="Submit" />
+            <Toaster
+                position="top-center"/>
             <p className='mt-3'>Already Have An Account?Please <Link to='/login' className='font-bold'>Login</Link></p>
-            <SocialLogin/>
+            <SocialLogin />
         </form>
     );
 

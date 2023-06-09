@@ -9,6 +9,8 @@ const Navbar = () => {
             .then(() => { })
             .catch(error => { console.log(error.message) })
     }
+
+    
     const navLists = (
         <React.Fragment>
         <li><NavLink to="/" className='hover:text-blue-500'>Homepage</NavLink></li>
@@ -35,7 +37,7 @@ const Navbar = () => {
                     <NavLink to="/login" className="mr-3 hover:text-blue-500">
                         Login
                     </NavLink>
-                    <NavLink to="/registration" className="mr-3 hover:text-blue-500">
+                    <NavLink to="/signup" className="mr-3 hover:text-blue-500">
                         Register
                     </NavLink>
                 </React.Fragment>
