@@ -4,13 +4,16 @@ import { FaHome, FaUserGraduate, FaUserTie, FaUsers } from "react-icons/fa";
 import { useAdmin } from '../hooks/useAdmin';
 import { useInstructor } from '../hooks/useInstructor';
 // import { BsFillEmojiSmileFill } from "react-icons/bs";
+import { SiGoogleclassroom } from "react-icons/si";
+import useStudent from '../hooks/useStudent';
+// import { GiClassicalKnowledge } from "react-icons/go";
 const Dashboard = () => {
     // const isAdmin = true
     // const isInstructor = true
-    // const isStudent = true
+    const [isStudent] = useStudent()
 
-    const [isAdmin]=useAdmin()
-    const [isInstructor]=useInstructor()
+    const [isAdmin] = useAdmin()
+    const [isInstructor] = useInstructor()
     return (
         <div className="drawer lg:drawer-open">
             <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
@@ -25,21 +28,28 @@ const Dashboard = () => {
                     {
                         isAdmin &&
                         <React.Fragment>
-                            <li><NavLink to='manageClasses' className='hover:text-blue-500'><FaUserGraduate/>Manage Classes</NavLink></li>
+                            <li><NavLink to='manageClasses' className='hover:text-blue-500'><FaUserGraduate />Manage Classes</NavLink></li>
                             <li><NavLink to='manageUsers' className='hover:text-blue-500'><FaUsers />Manage Users</NavLink></li>
                         </React.Fragment>
                     }
                     {
                         isInstructor &&
                         <React.Fragment>
-                            <li><NavLink to='addClass' className='hover:text-blue-500'>Add A Class</NavLink></li>
-                            <li><NavLink to='myClasses' className='hover:text-blue-500'>My Classes</NavLink></li>
+                            <li><NavLink to='addClass' className='hover:text-blue-500'><SiGoogleclassroom />Add A Class</NavLink></li>
+                            <li><NavLink to='myClasses' className='hover:text-blue-500'><SiGoogleclassroom/>My Classes</NavLink></li>
+                        </React.Fragment>
+                    }
+                    {
+                        isStudent &&
+                        <React.Fragment>
+                            <li><NavLink to='mySelectedClasses' className='hover:text-blue-500'><SiGoogleclassroom/>My Selected Classes</NavLink></li>
+                            <li><NavLink to='myEnrolledClasses' className='hover:text-blue-500'><FaUserGraduate />My Enrolled Classes</NavLink></li>
                         </React.Fragment>
                     }
                     <hr className='border-black my-5' />
-                    <li><NavLink to="/" className='hover:text-blue-500'><FaHome/>Homepage</NavLink></li>
-                    <li><NavLink to="/instructors" className='hover:text-blue-500'><FaUserTie/>Instructors</NavLink></li>
-                    <li><NavLink to="/classes" className='hover:text-blue-500'><FaUserGraduate/>Classes</NavLink></li>
+                    <li><NavLink to="/" className='hover:text-blue-500'><FaHome />Homepage</NavLink></li>
+                    <li><NavLink to="/instructors" className='hover:text-blue-500'><FaUserTie />Instructors</NavLink></li>
+                    <li><NavLink to="/classes" className='hover:text-blue-500'><FaUserGraduate />Classes</NavLink></li>
                 </ul>
 
             </div>
