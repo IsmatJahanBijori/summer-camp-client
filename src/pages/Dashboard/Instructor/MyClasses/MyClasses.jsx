@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 const MyClasses = () => {
     return (
         <div>
-            <h1>MyClasses</h1>
+            <h1>ManageClasses</h1>
         </div>
     );
 };

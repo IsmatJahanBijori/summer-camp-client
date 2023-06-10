@@ -22,10 +22,10 @@ const Navbar = () => {
     const navLists = (
         <React.Fragment>
             <li><NavLink to="/" className='text-white bg-black'>Homepage</NavLink></li>
-            <li><NavLink to="/instructors" className='text-black'>Instructors</NavLink></li>
-            <li><NavLink to="/classes" className='text-black'>Classes</NavLink></li>
+            <li><NavLink to="/instructors" className='text-white bg-black'>Instructors</NavLink></li>
+            <li><NavLink to="/classes" className='text-white bg-black'>Classes</NavLink></li>
             {
-                user ? <li><NavLink to="/dashboard" className='text-black'>Dashboard</NavLink></li> : <li><NavLink to="/login" className='text-black'>Login</NavLink></li>
+                user ? <li><NavLink to="/dashboard" className='text-white bg-black'>Dashboard</NavLink></li> : <li><NavLink to="/login" className='text-white bg-black'>Login</NavLink></li>
             }
             {user ? (
                 <React.Fragment>
@@ -44,7 +44,7 @@ const Navbar = () => {
                 </React.Fragment>
             ) :
                 <li>
-                    <NavLink to="/signup" className=" text-black">
+                    <NavLink to="/signup" className=" text-white bg-black">
                         Register
                     </NavLink>
                 </li>
