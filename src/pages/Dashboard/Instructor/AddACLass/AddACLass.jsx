@@ -1,11 +1,63 @@
 import React, { useContext } from 'react';
 import { AuthContext } from '../../../../Provider/AuthProvider';
 import { useForm } from "react-hook-form";
-const AddACLass = () => {
+import useAxiosSecure from '../../../../hooks/useAxiosSecure';
+import Swal from 'sweetalert2';
 
-    const {user}=useContext(AuthContext)
+const img_hosting_token = import.meta.env.VITE_IMG_URL
+// console.log(img_hosting_url)
+const AddACLass = () => {
+    const [axiosSecure] = useAxiosSecure()
+    const { user } = useContext(AuthContext)
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
-    const onSubmit = data => console.log(data);
+    const img_hosting_url=`https://api.imgbb.com/1/upload?key=${img_hosting_token}`
+    const onSubmit = data => {
+        // console.log(data)
+
+        const formData = new FormData()
+        formData.append('image', data.image[0])
+        // console.log(formData)
+        fetch(img_hosting_url, {
+            method: 'POST',
+            body: formData
+        }).then(res => res.json())
+            .then(imgData => {
+                // console.log(imgData)
+                if (imgData.success) {
+                    const imgUrl = imgData.data.display_url;
+                    const { className, instName, instEmail, seats, price } = data;
+                    const classItem = { className, instName, instEmail, seats, price: parseFloat(price), image: imgUrl }
+                    console.log(classItem)
+                    axiosSecure.post('/classes', classItem)
+                        .then(data => {
+                            // console.log('after posting new menu item', data.data)
+                            if (data.data.insertedId) {
+                                // reset();
+                                Swal.fire({
+                                    position: 'top-end',
+                                    icon: 'success',
+                                    title: 'Item added successfully',
+                                    showConfirmButton: false,
+                                    timer: 1500
+                                })
+                            }
+                        })
+                }
+                // const imgUrl = imgData.data.display_url;
+                // const { className, instName, instEmail, seats, price } = data;
+                // const classItem = { className, instName, instEmail, seats, price: parseFloat(price), image: imgUrl }
+                // console.log(classItem)
+                // fetch('http://localhost:5000/classes', {
+                //     method: 'POST',
+                //     headers: {
+                //         'content-type': 'application/json'
+                //     },
+                //     body: JSON.stringify(classItem)
+                // }).then(res => res.json()).then(data => {
+                //     console.log(data)
+                // })
+            })
+    };
 
     return (
         <div className="hero min-h-screen bg-slate-100">
@@ -19,7 +71,7 @@ const AddACLass = () => {
                                 <span className="label-text">Class Name</span>
                             </label>
                             <select {...register("className")} className="select select-info w-full max-w-xs">
-                                <option disabled selected className='mb-2'>Select Your Course</option>
+                                <option disabled defaultValue={"Select Your Course"} className='mb-2'>Select Your Course</option>
                                 <option>Italian for Travelers</option>
                                 <option>Japanese Language and Culture</option>
                                 <option>English & Business Conversation</option>
@@ -66,11 +118,11 @@ const AddACLass = () => {
                             <label className="label">
                                 <span className="label-text">$ Price</span>
                             </label>
-                            <input type="text" {...register("price", { required: true })} placeholder="Price" className="input input-bordered max-w-xs" />
+                            <input type="number" {...register("price", { required: true })} placeholder="Price" className="input input-bordered max-w-xs" />
                         </div>
 
                         <div className="form-control mt-6">
-                        <input className="btn btn-info max-w-xs" type="submit" value="Add Item" />
+                            <input className="btn btn-info max-w-xs" type="submit" value="Add Item" />
                         </div>
                     </form>
                 </div>
