@@ -38,7 +38,7 @@ const ManageClasses = () => {
                 }
             })
     }
-    // TODO: The deny button is not working
+    // TODO: The deny button is  working: just change the patch into put method
     const handleDeny = (clasS) => {
         // console.log('clicked')
         Swal.fire({
@@ -52,7 +52,7 @@ const ManageClasses = () => {
         }).then((result) => {
             if (result.isConfirmed) {
                 fetch(`http://localhost:5000/classes/${clasS._id}`, {
-                    method: 'PATCH'
+                    method: 'PUT'
                 })
                     .then(res => res.json())
                     .then(data => {
@@ -70,7 +70,7 @@ const ManageClasses = () => {
         })
 
     }
-    const handlePending = (clasS) => {
+    const handleFeedback= (clasS) => {
         console.log('clicked')
     }
     return (
@@ -106,7 +106,7 @@ const ManageClasses = () => {
                                     <td className='text-right'>{clasS.price}</td>
                                     <td>{clasS.status === 'Approve' ? 'Approve' : <button onClick={() => handleApprove(clasS)} className='btn btn-active btn-ghost my-3'>Approve</button>}</td>
                                     <td>{clasS.status === 'Deny' ? 'Deny' : <button onClick={() => handleDeny(clasS)} className='btn btn-active btn-ghost my-3'>Deny</button>}</td>
-                                    <td>{clasS.status === 'Pending' ? 'Pending' : <button onClick={() => handlePending(clasS)} className='btn btn-active btn-ghost my-3'>Feedback</button>}</td>
+                                    <td>{clasS.status === 'Pending' ? 'Pending' : <button onClick={() => handleFeedback(clasS)} className='btn btn-active btn-ghost my-3'>Feedback</button>}</td>
                                 </tr>
                             )
                         }
