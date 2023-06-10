@@ -1,9 +1,11 @@
 import React from 'react';
+import useClasses from '../../hooks/useClasses';
 
 const Classes = () => {
+    const [classes] = useClasses()
     return (
         <div>
-        Classes
+        {classes.length}
         </div>
     );
 };
