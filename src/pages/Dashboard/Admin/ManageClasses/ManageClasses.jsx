@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from 'react';
+import useClasses from '../../../../hooks/useClasses';
 
 const ManageClasses = () => {
-    const [classes, setClasses] = useState([])
-    useEffect(() => {
-        fetch('http://localhost:5000/classes', {
-            method: 'GET'
-        })
-            .then(res => res.json())
-            .then(data => {
-                // console.log(data)
-                setClasses(data)
-            })
-    }, [])
+    const [classes] = useClasses()
+    // useEffect(() => {
+    //     fetch('http://localhost:5000/classes', {
+    //         method: 'GET'
+    //     })
+    //         .then(res => res.json())
+    //         .then(data => {
+    //             setClasses(data)
+    //         })
+    // }, [])
     return (
         <div>
             <h2 className='text-4xl my-3 text-center'>Manage Users</h2>
