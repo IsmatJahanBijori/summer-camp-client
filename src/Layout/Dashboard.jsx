@@ -5,13 +5,13 @@ import { useAdmin } from '../hooks/useAdmin';
 import { useInstructor } from '../hooks/useInstructor';
 // import { BsFillEmojiSmileFill } from "react-icons/bs";
 import { SiGoogleclassroom } from "react-icons/si";
-import useStudent from '../hooks/useStudent';
+// import useStudent from '../hooks/useStudent';
 // import { GiClassicalKnowledge } from "react-icons/go";
 const Dashboard = () => {
     // const isAdmin = true
     // const isInstructor = true
-    const [isStudent] = useStudent()
-
+    // const [isStudent] = useStudent()
+    const isStudent = true
     const [isAdmin] = useAdmin()
     const [isInstructor] = useInstructor()
     return (
@@ -31,18 +31,17 @@ const Dashboard = () => {
                             <li><NavLink to='manageClasses' className='hover:text-blue-500'><FaUserGraduate />Manage Classes</NavLink></li>
                             <li><NavLink to='manageUsers' className='hover:text-blue-500'><FaUsers />Manage Users</NavLink></li>
                         </React.Fragment>
-                    }
-                    {
+
+                        ||
                         isInstructor &&
                         <React.Fragment>
                             <li><NavLink to='addClass' className='hover:text-blue-500'><SiGoogleclassroom />Add A Class</NavLink></li>
-                            <li><NavLink to='myClasses' className='hover:text-blue-500'><SiGoogleclassroom/>My Classes</NavLink></li>
+                            <li><NavLink to='myClasses' className='hover:text-blue-500'><SiGoogleclassroom />My Classes</NavLink></li>
                         </React.Fragment>
-                    }
-                    {
-                        isStudent &&
+
+                        ||
                         <React.Fragment>
-                            <li><NavLink to='mySelectedClasses' className='hover:text-blue-500'><SiGoogleclassroom/>My Selected Classes</NavLink></li>
+                            <li><NavLink to='mySelectedClasses' className='hover:text-blue-500'><SiGoogleclassroom />My Selected Classes</NavLink></li>
                             <li><NavLink to='myEnrolledClasses' className='hover:text-blue-500'><FaUserGraduate />My Enrolled Classes</NavLink></li>
                         </React.Fragment>
                     }
