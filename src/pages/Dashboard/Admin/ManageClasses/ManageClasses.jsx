@@ -6,7 +6,7 @@ import Swal from 'sweetalert2';
 const ManageClasses = () => {
     // const [classes] = useClasses()
     // useEffect(() => {
-    //     fetch('http://localhost:5000/classes', {
+    //     fetch('https://summer-camp-server-alpha.vercel.app/classes', {
     //         method: 'GET'
     //     })
     //         .then(res => res.json())
@@ -16,11 +16,11 @@ const ManageClasses = () => {
     // }, [])
 
     const { data: classes = [], refetch } = useQuery(['classes'], async () => {
-        const res = await fetch('http://localhost:5000/classes')
+        const res = await fetch('https://summer-camp-server-alpha.vercel.app/classes')
         return res.json()
     })
     const handleApprove = (clasS) => {
-        fetch(`http://localhost:5000/classes/${clasS._id}`, {
+        fetch(`https://summer-camp-server-alpha.vercel.app/classes/${clasS._id}`, {
             method: 'PATCH'
         })
             .then(res => res.json())
@@ -51,7 +51,7 @@ const ManageClasses = () => {
             confirmButtonText: 'Yes, denied it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/classes/${clasS._id}`, {
+                fetch(`https://summer-camp-server-alpha.vercel.app/classes/${clasS._id}`, {
                     method: 'PUT'
                 })
                     .then(res => res.json())

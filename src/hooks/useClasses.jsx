@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 const useClasses = () => {
     const [classes, setClasses] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/classes', {
+        fetch('https://summer-camp-server-alpha.vercel.app/classes', {
             method: 'GET'
         })
             .then(res => res.json())

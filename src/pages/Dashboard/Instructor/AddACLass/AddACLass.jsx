@@ -47,7 +47,7 @@ const AddACLass = () => {
                 // const { className, instName, instEmail, seats, price } = data;
                 // const classItem = { className, instName, instEmail, seats, price: parseFloat(price), image: imgUrl }
                 // console.log(classItem)
-                // fetch('http://localhost:5000/classes', {
+                // fetch('https://summer-camp-server-alpha.vercel.app/classes', {
                 //     method: 'POST',
                 //     headers: {
                 //         'content-type': 'application/json'
