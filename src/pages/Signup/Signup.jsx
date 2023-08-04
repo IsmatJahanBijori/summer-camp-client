@@ -19,22 +19,24 @@ const Signup = () => {
         console.log(data.name, data.email, data.password, data.photo)
         createUser(data.email, data.password)
             .then(result => {
-                const savedUser={name: data.name, email: data.email}
-                console.log(result.user)
-                updateUserProfile(data.name, data.photo)
-                    .then(() => {
-                        console.log("user profile updated")
+                // const savedUser={name: data.name, email: data.email}
+                // console.log(result.user)
+                // updateUserProfile(data.name, data.photo)
+                //     .then(() => {
+                //         console.log("user profile updated")
                         
-                        fetch('https://summer-camp-server-alpha.vercel.app/users',{
-                            method:'POST',
-                            headers:{
-                                'content-type':'application/json'
-                            },
-                            body: JSON.stringify(savedUser)
-                        })
-                        navigate("/");
-                    })
-                // navigate("/");
+                //         fetch('https://summer-camp-server-alpha.vercel.app/users',{
+                //             method:'POST',
+                //             headers:{
+                //                 'content-type':'application/json'
+                //             },
+                //             body: JSON.stringify(savedUser)
+                //         })
+                //         navigate("/");
+                //     })
+                // // navigate("/");
+                console.log(result.user)
+                navigate("/");
             })
             .catch(error =>
                 console.log(error.message))

@@ -55,9 +55,3 @@ const Classes = () => {
 };
 
 export default Classes;
-{/*
-    user ? <div className="card-actions justify-end">
-        <button className="btn btn-info">Select</button>
-    </div>
-        : <Link to="/login" className='hover:text-blue-500'>Login</Link>
-*/}
