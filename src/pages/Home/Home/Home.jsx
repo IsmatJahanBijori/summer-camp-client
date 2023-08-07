@@ -5,6 +5,12 @@ import PopularInstructors from '../PopularInstructors/PopularInstructors';
 import ExtraSection from '../ExtraSection/ExtraSection';
 import Fun from '../Fun/Fun';
 import TermsAndConditions from '../TermsAndConditions/TermsAndConditions';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
+AOS.init({
+    duration: 3000
+});
 
 const Home = () => {
     return (
@@ -15,8 +21,8 @@ const Home = () => {
             <div className="mx-24">
                 <ExtraSection />
             </div>
-            <Fun/>
-            <TermsAndConditions/>
+            <Fun />
+            <TermsAndConditions />
         </div>
 
     );

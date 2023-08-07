@@ -64,3 +64,5 @@ const Footer = () => {
 };
 
 export default Footer;
+
+//bg-gradient-to-r from-slate-300 via-pink-200 to-base-100

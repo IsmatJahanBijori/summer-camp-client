@@ -12,7 +12,7 @@ const PopularInstructors = () => {
     const [instructors] = useInstructors()
     return (
         <div>
-            <span className='text-3xl text-center mx-96 mt-10 mb-0'>Our Top Instructors</span>
+            <p className='text-3xl text-center mt-20 mb-10 ml-5'>Our Top Instructors</p>
             <Swiper
                 grabCursor={true}
                 effect={"creative"}

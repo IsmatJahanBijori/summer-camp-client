@@ -37,7 +37,7 @@ const Navbar = () => {
                     <li className="dropdown dropdown-end">
                         <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                             <div className="w-10 rounded-full">
-                                <img src={user?.photoURL} />
+                                <img src={user.photoURL} />
                             </div>
                         </label>
                     </li>
@@ -53,7 +53,7 @@ const Navbar = () => {
     );
 
     return (
-        <div className="navbar bg-gradient-to-r from-slate-200 via-pink-200 to-base-100">
+        <div className="navbar mx-auto bg-gradient-to-r from-slate-200 via-pink-200 to-base-100 rounded-md">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost btn-lg btn-circle">
@@ -79,3 +79,4 @@ const Navbar = () => {
 
 export default Navbar;
 
+//d navbar mx-auto bg-gradient-to-r from-slate-200 via-pink-200 to-base-100

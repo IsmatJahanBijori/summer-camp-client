@@ -7,7 +7,7 @@ import { EffectCube, Pagination } from "swiper";
 
 const Slider = () => {
     return (
-        <div className='my-44 mb-10 md:my-0'>
+        <div className='mb-10 md:my-0 w-full'>
             <Swiper
                 effect={"cube"}
                 grabCursor={true}

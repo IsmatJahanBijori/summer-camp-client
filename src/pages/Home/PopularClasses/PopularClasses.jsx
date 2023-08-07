@@ -10,7 +10,7 @@ const PopularClasses = () => {
 
     return (
         <div>
-            <span className='text-3xl text-center mx-96 mt-20 mb-0'>Our Top Classes</span>
+            <p className='text-3xl text-center mt-20 mb-0 ml-5'>Our Top Classes</p>
             <Marquee className='grid grid-cols-1 md:grid-cols-3 p-20 my-10'>
                 {
                     approvedClasses.map(clasS =>
