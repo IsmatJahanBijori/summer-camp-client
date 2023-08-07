@@ -12,7 +12,7 @@ const Fun = () => {
         <div style={{ position: 'relative', height: '600px', width: "100%" }} className='mb-[900px] md:my-20'>
             <div className=''>
             <svg
-            xmlns="http://www.w3.org/2000/svg"
+            // xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 1440 320"
             style={{ position: 'absolute', width: '100%', height: '100%' }}
             className='hidden md:block absolute'
@@ -50,3 +50,5 @@ const Fun = () => {
 };
 
 export default Fun;
+
+//d="M0,192L60,202.7C120,213,240,235,360,208C480,181,600,107,720,74.7C840,43,960,53,1080,53.3C1200,53,1320,43,1380,37.3L1440,32L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"
