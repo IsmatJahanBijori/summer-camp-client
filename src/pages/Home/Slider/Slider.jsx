@@ -4,12 +4,7 @@ import "swiper/css";
 import "swiper/css/effect-cube";
 import "swiper/css/pagination";
 import { EffectCube, Pagination } from "swiper";
-// <a href="https://imgbb.com/"><img src="https://i.ibb.co/pz5WZPs/img1.jpg" alt="img1" border="0"></a>
-//<a href="https://ibb.co/RYR8M0V"><img src="https://i.ibb.co/jbntxM1/img2.jpg" alt="img2" border="0"></a>
-//<a href="https://ibb.co/pRkJqLf"><img src="https://i.ibb.co/BrYqkCy/img3.jpg" alt="img3" border="0"></a><br /><a target='_blank' href='https://500pxdownload.com/'>instagram photo download high quality</a><br />
-// <a href="https://ibb.co/cxWrD2M"><img src="https://i.ibb.co/d7N5Gk1/img4.png" alt="img4" border="0"></a><br /><a target='_blank' href='https://500pxdownload.com/'>save instagram pictures chrome extension</a><br />
-//<a href="https://ibb.co/ftrCS2H"><img src="https://i.ibb.co/tcYbh4D/img5.jpg" alt="img5" border="0"></a><br /><a target='_blank' href='https://500pxdownload.com/'>instagram picture grabber</a><br />
-//<a href="https://imgbb.com/"><img src="https://i.ibb.co/DGRYS95/img6.jpg" alt="img6" border="0"></a>
+
 const Slider = () => {
     return (
         <div className='my-44 md:my-0'>
@@ -27,7 +22,7 @@ const Slider = () => {
                 className="mySwiper"
             >
                 <SwiperSlide>
-                    <img src="https://i.ibb.co/tcYbh4D/img5.jpg" className='w-[900px] mx-auto my-20' />
+                    <img src="https://i.ibb.co/tcYbh4D/img5.jpg" className='w-[1600px] h-[1200px] mx-auto mb-20' />
                     <div className='absolute -mt-96 ml-[20px] mr-3 md:-mt-64 md:ml-[600px]'>
                         <div className="bg-black bg-opacity-30 w-full p-5 md:w-[760px] md:h-[140px]">
                             <h2 className='text-5xl text-white'>Welcome to our Language Camp!</h2>
@@ -36,7 +31,7 @@ const Slider = () => {
                     </div>
                 </SwiperSlide>
                 <SwiperSlide>
-                    <img src="https://i.ibb.co/BrYqkCy/img3.jpg" className='w-[900px] mx-auto my-20' />
+                    <img src="https://i.ibb.co/BrYqkCy/img3.jpg" className='w-[1600px] h-[1200px] mx-auto mb-20' />
                     <div className='absolute -mt-96 ml-[20px] mr-3 md:-mt-64 md:ml-[600px]'>
                         <div className="bg-black bg-opacity-30 w-full p-5 md:w-[760px] md:h-[140px]">
                             <h2 className='text-5xl text-white'>Exciting Cultural Activities</h2>
@@ -45,7 +40,7 @@ const Slider = () => {
                     </div>
                 </SwiperSlide>
                 <SwiperSlide>
-                    <img src="https://i.ibb.co/tcYbh4D/img5.jpg" className='w-[900px] mx-auto my-20' />
+                    <img src="https://i.ibb.co/tcYbh4D/img5.jpg" className='w-[1600px] h-[1200px] mx-auto mb-20' />
                     <div className='absolute -mt-96 ml-[20px] mr-3 md:-mt-64 md:ml-[600px]'>
                         <div className="bg-black bg-opacity-30 w-full p-5 md:w-[760px] md:h-[140px]">
                             <h2 className='text-5xl text-white'>Learn from Native Speakers</h2>
@@ -54,7 +49,7 @@ const Slider = () => {
                     </div>
                 </SwiperSlide>
                 <SwiperSlide>
-                    <img src="https://i.ibb.co/BrYqkCy/img3.jpg" className='w-[900px] mx-auto my-20' />
+                    <img src="https://i.ibb.co/BrYqkCy/img3.jpg" className='w-[1600px] h-[1200px] mx-auto mb-20' />
                     <div className='absolute -mt-96 ml-[20px] mr-3 md:-mt-64 md:ml-[600px]'>
                         <div className="bg-black bg-opacity-30 w-full p-5 md:w-[760px] md:h-[140px]">
                             <h2 className='text-5xl text-white'>Exciting Cultural Activities</h2>

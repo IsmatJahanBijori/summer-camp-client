@@ -3,9 +3,6 @@ import useClasses from '../../../hooks/useClasses';
 import Marquee from 'react-fast-marquee';
 
 
-
-
-
 const PopularClasses = () => {
     const [classes] = useClasses()
 
