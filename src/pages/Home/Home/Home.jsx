@@ -4,6 +4,7 @@ import PopularClasses from '../PopularClasses/PopularClasses';
 import PopularInstructors from '../PopularInstructors/PopularInstructors';
 import ExtraSection from '../ExtraSection/ExtraSection';
 import Fun from '../Fun/Fun';
+import TermsAndConditions from '../TermsAndConditions/TermsAndConditions';
 
 const Home = () => {
     return (
@@ -15,6 +16,7 @@ const Home = () => {
                 <ExtraSection />
             </div>
             <Fun/>
+            <TermsAndConditions/>
         </div>
 
     );

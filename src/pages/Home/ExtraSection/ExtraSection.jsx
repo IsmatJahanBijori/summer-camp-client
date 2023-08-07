@@ -1,5 +1,5 @@
 import React from 'react';
-// <a href="https://imgbb.com/"><img src="https://i.ibb.co/h9n9Qmx/extra1.jpg" alt="extra1" border="0"></a><br /><a target='_blank' href='https://imgbb.com/'>free image hosting</a><br />
+
 const ExtraSection = () => {
     return (
         <div className="hero md:border md:border-blue-300 bg-slate-200 my-20 px-auto">
@@ -15,13 +15,3 @@ const ExtraSection = () => {
 };
 
 export default ExtraSection;
-{/**
-<div className="card flex md:flex-row bg-base-100 w-80 shadow-xl my-20">
-            <figure><img src="https://i.ibb.co/h9n9Qmx/extra1.jpg" className='w-full' alt="Album" /></figure>
-            <div className="card-body">
-                <h2 className="card-title">Why Choose Us!</h2>
-                <p>Click the button to listen on Spotiwhy app.</p>
-            </div>
-        </div> */}
-
-        //<a href="https://imgbb.com/"><img src="https://i.ibb.co/dPk8q0W/extra.jpg" alt="extra" border="0"></a>

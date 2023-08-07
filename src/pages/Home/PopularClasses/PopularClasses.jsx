@@ -15,7 +15,7 @@ const PopularClasses = () => {
             {
                 approvedClasses.map(clasS =>
                     <div className="card w-96 h-[500px] bg-slate-100 shadow-xl m-20">
-                        <figure><img src={clasS.image} className='p-5 w-full' alt="Class" /></figure>
+                        <figure><img src={clasS.image} className='p-5 w-full h-[300px]' alt="Class" /></figure>
                         <div className="card-body">
                             <h2 className="card-title">{clasS.className}</h2>
                             <p>Instructor Name: {clasS.instName}</p>
