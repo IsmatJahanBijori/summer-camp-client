@@ -7,6 +7,8 @@ import Fun from '../Fun/Fun';
 import TermsAndConditions from '../TermsAndConditions/TermsAndConditions';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import Offer from '../Offer/Offer';
+import Testimonials from '../Testimonials/Testimonials';
 
 AOS.init({
     duration: 3000
@@ -23,6 +25,12 @@ const Home = () => {
             </div>
             <Fun />
             <TermsAndConditions />
+            <div className='mx-24'>
+            <Offer/>
+            </div>
+            <div className='mx-48'>
+            <Testimonials/>
+            </div>
         </div>
 
     );

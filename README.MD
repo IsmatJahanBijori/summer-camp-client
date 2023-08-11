@@ -12,6 +12,10 @@
 ### 10. tanstack query and axios added(useAdmin and useInstructor)
 ### 11. npm install react-hook-form
 
+### npm install react-icons --save
+
+### npm i @smastrom/react-rating
+
 ### 12. In my website has a navbar with the Website logo & Website name, Home, Instructors, Classes, Dashboard and User profile picture. The user profile picture and Dashboard on the navbar are conditional. If the user is logged in, the navbar is showing the profile picture; otherwise, it will show the Login button. Keeping the navbar and footer on all the pages except on the 404 page.
 
 ### 13. Registration & Login System:

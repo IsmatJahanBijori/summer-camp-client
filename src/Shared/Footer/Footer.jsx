@@ -5,10 +5,19 @@ import { FaFacebook, FaGithub, FaGoogle, FaInstagram, FaLinkedin, FaTwitter } fr
 const Footer = () => {
     return (
         <div>
-            <footer className="footer p-10 bg-gradient-to-r from-slate-300 via-pink-200 to-base-100 text-base-content rounded-t-lg">
+            <footer className="footer p-10 bg-gradient-to-r from-slate-200 to-[#D0BFFF] text-base-content rounded-t-lg">
                 <div>
                     <img src="https://i.ibb.co/9sfSDND/logo.png" className='h-20' alt="" />
                     <p className='font-serif text-2xl'>Lingua Campha Learning School<br />Providing reliable tech since 2023</p>
+                </div>
+                <div className='font-serif'>
+                    <span className="footer-title">Pages</span>
+                    <Link className="link link-hover" to="/">Home</Link>
+                    <Link className="link link-hover" to="/instructors">Instructors</Link>
+                    <Link className="link link-hover" to="/classes">Classes</Link>
+                    <Link className="link link-hover" to="/dashboard">Dashboard</Link>
+                    <Link className="link link-hover" to="/login">Login</Link>
+                    <Link className="link link-hover" to="/signup">Register</Link>
                 </div>
                 <div className='font-serif'>
                     <span className="footer-title">Services</span>
@@ -54,7 +63,7 @@ const Footer = () => {
                     </div>
                 </div>
             </footer>
-            <footer className="footer footer-center mt-0 bg-gradient-to-r from-base-200 to-[#ebf1ec] text-base-content pb-10 rounded-b-lg">
+            <footer className="footer footer-center mt-0 bg-gradient-to-r from-slate-200 to-[#D0BFFF] text-base-content pb-10 rounded-b-lg">
                 <div className='font-serif text-xl'>
                     <p>Copyright © 2023 - All right reserved by Lingua Campha Learning School</p>
                 </div>

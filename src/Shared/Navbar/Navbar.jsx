@@ -53,7 +53,7 @@ const Navbar = () => {
     );
 
     return (
-        <div className="navbar mx-auto bg-gradient-to-r from-slate-200 via-pink-200 to-base-100 rounded-md">
+        <div className="navbar mx-auto bg-gradient-to-r from-slate-200 to-[#D0BFFF] rounded-md">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost btn-lg btn-circle">
